@@ -1,0 +1,16 @@
+
+
+<ul class="nav justify-content-center nav-pills">
+  <li class="nav-item">
+    <a {{ app.request.attributes.get("_route") == 'homepage' ? 'class="nav-link active"' : ''}} class="nav-link" href="{{path('homepage')}}">Accueil</a>
+  </li>
+  <li class="nav-item">
+    <a {{ app.request.attributes.get("_route") == 'templates' ? 'class="nav-link active"' : ''}} class="nav-link" href="{{path('templates')}}">Templates</a>
+  </li>
+</ul>
+
+<style>
+.nav {
+  margin : 1em
+}
+</style>

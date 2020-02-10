@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue chez nous{% endblock %}
+
+{% block body %}
+{% block menu %} {% endblock %}
+    <h1 class="text-center" >Liste des templates</h1>
+
+    <div class="d-flex" id="wrapper">
+    {% block sidebar %} 
+    {{include('sidebar.html.twig')}}
+    {% endblock %}
+        <div class="row row-cols-1 row-cols-md-3">
+        {% for template in templates %}
+            <div class="col mb-4">
+                <div class="card">
+                    <div {{ template.premium == '1' ? 'style="background-color : green"' :'style="background-color : grey"' }} class="text-center">
+                        <div class="">
+                            <h3 class="">{{template.name}}</h3>
+                            <p class="">{{ template.premium == '1' ? 'article premium only' :'' }}</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">description : {{template.description}}</p>
+                        <p class="card-text">preview : {{template.preview}}</p>
+                        <p>{{ template.active == '0' ? 'article disponible prochainement' :'' }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+    {% block stylesheets %}
+    {{parent()}}
+    <style> 
+        .row {
+            margin : 0
+            }
+        </style>
+    {% endblock %}

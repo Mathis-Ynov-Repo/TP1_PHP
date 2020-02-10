@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue chez nous{% endblock %}
+
+{% block body %}
+{% block menu %} {% endblock %}
+    <h1 class="text-center">Bienvenue sur le site </h1>
+    <img class="img-fluid rounded mx-auto d-block" src="https://source.unsplash.com/random/500x300" alt="Responsive image">
+    <div class="container d-flex justify-content-center borders">
+        <h3>
+            <a class="text-center" href="{{path('templates')}}">Nos templates</a>
+        </h3>
+    </div>
+{% endblock %}
+{% block stylesheets %}
+ {{ parent() }} 
+ <style>
+ .borders {
+    border : 1px solid blue;
+    margin-top : 1em;
+ }
+ </style>
+ {% endblock %}
