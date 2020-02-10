@@ -1,0 +1,1 @@
+composer create-project symfony/skeleton tp '4.4.*'
